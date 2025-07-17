@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@6.1.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.0.2"></script>
+  <style>
+    h1, h2, p {
+      font-family: Arial, Helvetica, sans-serif;
+      padding-left: 55px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: normal;
+    }
+    p {
+      font-size: 14px;
+    }
+    body {
+      padding: 10px 20px;
+    }
+    .red {
+      color: #e45756;
+      font-weight: bold;
+    }
+    .footnotes {
+      font: 12px;
+    }
+    .genome {
+      text-align: center;
+      margin-top: 0px;
+      width: 670px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Which Antibiotic is your <span class="red">Best Bet?</span></h1>
+  <h2>As it turns out, the answer depends on the <span class="red">genome</span> of the offending bacteria.</h2>
+  <p>Let <span class="red">Burtin's antibiotic dataset</span> tell the story: 
+    hover over over the circled numbers to learn more!</p>
+  <div id="vis"/>
+  <script>
+    const spec = {
+  "config": {
+    "view": {"continuousWidth": 300, "continuousHeight": 300},
+    "axis": {"domain": false, "grid": false, "titleFontSize": 14},
+    "axisX": {
+      "labels": false,
+      "ticks": false,
+      "titleFontSize": 12,
+      "titleFontWeight": "normal"
+    },
+    "legend": {"labelFontSize": 12, "titleFontSize": 14},
+    "tick": {"thickness": 3}
+  },
+  "hconcat": [
+    {
+      "layer": [
+        {
+          "data": {"name": "data-66eae325419661dbdd624f39982b0948"},
+          "mark": {"type": "boxplot", "size": 30},
+          "encoding": {
+            "color": {
+              "field": "Antibiotic",
+              "scale": {"scheme": "paired"},
+              "type": "nominal"
+            },
+            "tooltip": {
+              "aggregate": "median",
+              "field": "MIC",
+              "type": "quantitative"
+            },
+            "x": {
+              "field": "Antibiotic",
+              "title": "Staphylococcus",
+              "type": "nominal"
+            },
+            "y": {
+              "field": "MIC",
+              "scale": {"type": "log", "domain": [0.0008, 1000]},
+              "title": "MIC (Smaller = More Effective)",
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-811c4131f1b58b403d0f21fa56c507a6"},
+          "mark": {
+            "type": "text",
+            "color": "#e45756",
+            "dx": 0,
+            "dy": -5,
+            "fontWeight": "bold",
+            "size": 50
+          },
+          "encoding": {
+            "text": {"field": "marker", "type": "nominal"},
+            "x": {"field": "Antibiotic", "type": "nominal"},
+            "y": {
+              "field": "MIC",
+              "scale": {"type": "log", "domain": [0.0008, 1000]},
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-811c4131f1b58b403d0f21fa56c507a6"},
+          "mark": {
+            "type": "text",
+            "color": "#e45756",
+            "dx": 0,
+            "dy": -42,
+            "fontWeight": "bold",
+            "size": 30
+          },
+          "encoding": {
+            "text": {"field": "marker2", "type": "nominal"},
+            "tooltip": {"field": "hover", "type": "nominal"},
+            "x": {"field": "Antibiotic", "type": "nominal"},
+            "y": {
+              "field": "MIC",
+              "scale": {"type": "log", "domain": [0.0008, 1000]},
+              "type": "quantitative"
+            }
+          }
+        }
+      ],
+      "width": 150
+    },
+    {
+      "layer": [
+        {
+          "data": {"name": "data-4fcd859d18942aa71a251a7e79dd35f5"},
+          "mark": {"type": "boxplot", "size": 30},
+          "encoding": {
+            "color": {"field": "Antibiotic", "type": "nominal"},
+            "tooltip": {
+              "aggregate": "median",
+              "field": "MIC",
+              "type": "quantitative"
+            },
+            "x": {
+              "field": "Antibiotic",
+              "title": "Salmonella",
+              "type": "nominal"
+            },
+            "y": {
+              "axis": {"labels": false, "ticks": false},
+              "field": "MIC",
+              "scale": {"type": "log", "domain": [0.0008, 1000]},
+              "title": null,
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-9e1591c878f4b4586651235b7d109dbe"},
+          "mark": {
+            "type": "text",
+            "color": "#e45756",
+            "dx": 0,
+            "dy": 0,
+            "fontWeight": "bold",
+            "size": 50
+          },
+          "encoding": {
+            "text": {"field": "marker", "type": "nominal"},
+            "x": {"field": "Antibiotic", "type": "nominal"},
+            "y": {
+              "field": "MIC",
+              "scale": {"type": "log", "domain": [0.0008, 1000]},
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-9e1591c878f4b4586651235b7d109dbe"},
+          "mark": {
+            "type": "text",
+            "color": "#e45756",
+            "dx": 45,
+            "dy": 5,
+            "fontWeight": "bold",
+            "size": 30
+          },
+          "encoding": {
+            "text": {"field": "marker2", "type": "nominal"},
+            "tooltip": {"field": "hover", "type": "nominal"},
+            "x": {"field": "Antibiotic", "type": "nominal"},
+            "y": {
+              "field": "MIC",
+              "scale": {"type": "log", "domain": [0.0008, 1000]},
+              "type": "quantitative"
+            }
+          }
+        }
+      ],
+      "width": 150
+    },
+    {
+      "layer": [
+        {
+          "data": {"name": "data-3b39ec4d08a63226b442c0351b15e49d"},
+          "mark": {"type": "boxplot", "size": 30},
+          "encoding": {
+            "color": {"field": "Antibiotic", "type": "nominal"},
+            "tooltip": {
+              "aggregate": "median",
+              "field": "MIC",
+              "type": "quantitative"
+            },
+            "x": {
+              "field": "Antibiotic",
+              "title": "Streptococcus",
+              "type": "nominal"
+            },
+            "y": {
+              "axis": {"labels": false, "ticks": false},
+              "field": "MIC",
+              "scale": {"type": "log", "domain": [0.0008, 1000]},
+              "title": null,
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-d604859ea725603f79903782f4b2522d"},
+          "mark": {
+            "type": "text",
+            "color": "#e45756",
+            "dx": 0,
+            "dy": 0,
+            "fontWeight": "bold",
+            "size": 50
+          },
+          "encoding": {
+            "text": {"field": "marker", "type": "nominal"},
+            "tooltip": {"field": "hover", "type": "nominal"},
+            "x": {"field": "Antibiotic", "type": "nominal"},
+            "y": {
+              "field": "MIC",
+              "scale": {"type": "log", "domain": [0.0008, 1000]},
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-d604859ea725603f79903782f4b2522d"},
+          "mark": {
+            "type": "text",
+            "color": "#e45756",
+            "dx": 0,
+            "dy": -38,
+            "fontWeight": "bold",
+            "size": 30
+          },
+          "encoding": {
+            "text": {"field": "marker2", "type": "nominal"},
+            "tooltip": {"field": "hover", "type": "nominal"},
+            "x": {"field": "Antibiotic", "type": "nominal"},
+            "y": {
+              "field": "MIC",
+              "scale": {"type": "log", "domain": [0.0008, 1000]},
+              "type": "quantitative"
+            }
+          }
+        }
+      ],
+      "width": 150
+    },
+    {
+      "layer": [
+        {
+          "data": {"name": "data-1e58ebb13e58359f2922b190515e8fc3"},
+          "mark": {"type": "boxplot", "size": 30},
+          "encoding": {
+            "color": {"field": "Antibiotic", "type": "nominal"},
+            "tooltip": {
+              "aggregate": "median",
+              "field": "MIC",
+              "type": "quantitative"
+            },
+            "x": {"field": "Antibiotic", "title": "Other", "type": "nominal"},
+            "y": {
+              "axis": {"labels": false, "ticks": false},
+              "field": "MIC",
+              "scale": {"type": "log", "domain": [0.0008, 1000]},
+              "title": null,
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-491e1f23d43872a17c1cf562afef7c23"},
+          "mark": {
+            "type": "text",
+            "color": "#e45756",
+            "dx": 5,
+            "dy": 0,
+            "fontWeight": "bold",
+            "size": 50
+          },
+          "encoding": {
+            "text": {"field": "marker", "type": "nominal"},
+            "x": {"field": "Antibiotic", "type": "nominal"},
+            "y": {
+              "field": "MIC",
+              "scale": {"type": "log", "domain": [0.0008, 1000]},
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "data": {"name": "data-491e1f23d43872a17c1cf562afef7c23"},
+          "mark": {
+            "type": "text",
+            "color": "#e45756",
+            "dx": -40,
+            "dy": 5,
+            "fontWeight": "bold",
+            "size": 30
+          },
+          "encoding": {
+            "text": {"field": "marker2", "type": "nominal"},
+            "tooltip": {"field": "hover", "type": "nominal"},
+            "x": {"field": "Antibiotic", "type": "nominal"},
+            "y": {
+              "field": "MIC",
+              "scale": {"type": "log", "domain": [0.0008, 1000]},
+              "type": "quantitative"
+            }
+          }
+        }
+      ],
+      "width": 150
+    }
+  ],
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "datasets": {
+    "data-66eae325419661dbdd624f39982b0948": [
+      {
+        "Bacteria": "Staphylococcus albus",
+        "Gram_Staining": "positive",
+        "Genus": "Staphylococcus",
+        "Antibiotic": "Penicillin",
+        "MIC": 0.007,
+        "MIC_log": 4.961845129926823,
+        "MIC_log_pos": 11.730338341575454
+      },
+      {
+        "Bacteria": "Staphylococcus aureus",
+        "Gram_Staining": "positive",
+        "Genus": "Staphylococcus",
+        "Antibiotic": "Penicillin",
+        "MIC": 0.03,
+        "MIC_log": 3.506557897319982,
+        "MIC_log_pos": 10.275051108968611
+      },
+      {
+        "Bacteria": "Staphylococcus albus",
+        "Gram_Staining": "positive",
+        "Genus": "Staphylococcus",
+        "Antibiotic": "Streptomycin",
+        "MIC": 0.1,
+        "MIC_log": 2.3025850929940455,
+        "MIC_log_pos": 9.071078304642676
+      },
+      {
+        "Bacteria": "Staphylococcus aureus",
+        "Gram_Staining": "positive",
+        "Genus": "Staphylococcus",
+        "Antibiotic": "Streptomycin",
+        "MIC": 0.03,
+        "MIC_log": 3.506557897319982,
+        "MIC_log_pos": 10.275051108968611
+      },
+      {
+        "Bacteria": "Staphylococcus albus",
+        "Gram_Staining": "positive",
+        "Genus": "Staphylococcus",
+        "Antibiotic": "Neomycin",
+        "MIC": 0.001,
+        "MIC_log": 6.907755278982137,
+        "MIC_log_pos": 13.676248490630766
+      },
+      {
+        "Bacteria": "Staphylococcus aureus",
+        "Gram_Staining": "positive",
+        "Genus": "Staphylococcus",
+        "Antibiotic": "Neomycin",
+        "MIC": 0.001,
+        "MIC_log": 6.907755278982137,
+        "MIC_log_pos": 13.676248490630766
+      }
+    ],
+    "data-811c4131f1b58b403d0f21fa56c507a6": [
+      {
+        "hover": "Neomycin kicks it out of the park (compared to Penicillin or Streptomycin) when facing of with bacteria of the Staphylococcus genome.",
+        "marker": "↓",
+        "marker2": "①",
+        "Antibiotic": "Neomycin",
+        "Genus": "Staphylococcus",
+        "MIC": 0.004
+      }
+    ],
+    "data-4fcd859d18942aa71a251a7e79dd35f5": [
+      {
+        "Bacteria": "Salmonella (Eberthella) typhosa",
+        "Gram_Staining": "negative",
+        "Genus": "Salmonella",
+        "Antibiotic": "Penicillin",
+        "MIC": 1,
+        "MIC_log": 0,
+        "MIC_log_pos": 6.76849321164863
+      },
+      {
+        "Bacteria": "Salmonella schottmuelleri",
+        "Gram_Staining": "negative",
+        "Genus": "Salmonella",
+        "Antibiotic": "Penicillin",
+        "MIC": 10,
+        "MIC_log": -2.302585092994046,
+        "MIC_log_pos": 4.465908118654584
+      },
+      {
+        "Bacteria": "Salmonella (Eberthella) typhosa",
+        "Gram_Staining": "negative",
+        "Genus": "Salmonella",
+        "Antibiotic": "Streptomycin",
+        "MIC": 0.4,
+        "MIC_log": 0.916290731874155,
+        "MIC_log_pos": 7.684783943522785
+      },
+      {
+        "Bacteria": "Salmonella schottmuelleri",
+        "Gram_Staining": "negative",
+        "Genus": "Salmonella",
+        "Antibiotic": "Streptomycin",
+        "MIC": 0.8,
+        "MIC_log": 0.2231435513142097,
+        "MIC_log_pos": 6.991636762962839
+      },
+      {
+        "Bacteria": "Salmonella (Eberthella) typhosa",
+        "Gram_Staining": "negative",
+        "Genus": "Salmonella",
+        "Antibiotic": "Neomycin",
+        "MIC": 0.008,
+        "MIC_log": 4.8283137373023015,
+        "MIC_log_pos": 11.596806948950931
+      },
+      {
+        "Bacteria": "Salmonella schottmuelleri",
+        "Gram_Staining": "negative",
+        "Genus": "Salmonella",
+        "Antibiotic": "Neomycin",
+        "MIC": 0.09,
+        "MIC_log": 2.4079456086518722,
+        "MIC_log_pos": 9.176438820300502
+      }
+    ],
+    "data-9e1591c878f4b4586651235b7d109dbe": [
+      {
+        "hover": "Neomycin performs similarly well against bacteria from the Salmonella genome.",
+        "marker": "←",
+        "marker2": "②",
+        "Antibiotic": "Penicillin",
+        "Genus": "Salmonella",
+        "MIC": 0.05
+      }
+    ],
+    "data-3b39ec4d08a63226b442c0351b15e49d": [
+      {
+        "Bacteria": "Streptococcus fecalis",
+        "Gram_Staining": "positive",
+        "Genus": "Streptococcus",
+        "Antibiotic": "Penicillin",
+        "MIC": 1,
+        "MIC_log": 0,
+        "MIC_log_pos": 6.76849321164863
+      },
+      {
+        "Bacteria": "Streptococcus hemolyticus",
+        "Gram_Staining": "positive",
+        "Genus": "Streptococcus",
+        "Antibiotic": "Penicillin",
+        "MIC": 0.001,
+        "MIC_log": 6.907755278982137,
+        "MIC_log_pos": 13.676248490630766
+      },
+      {
+        "Bacteria": "Streptococcus viridans",
+        "Gram_Staining": "positive",
+        "Genus": "Streptococcus",
+        "Antibiotic": "Penicillin",
+        "MIC": 0.005,
+        "MIC_log": 5.298317366548036,
+        "MIC_log_pos": 12.066810578196666
+      },
+      {
+        "Bacteria": "Streptococcus fecalis",
+        "Gram_Staining": "positive",
+        "Genus": "Streptococcus",
+        "Antibiotic": "Streptomycin",
+        "MIC": 1,
+        "MIC_log": 0,
+        "MIC_log_pos": 6.76849321164863
+      },
+      {
+        "Bacteria": "Streptococcus hemolyticus",
+        "Gram_Staining": "positive",
+        "Genus": "Streptococcus",
+        "Antibiotic": "Streptomycin",
+        "MIC": 14,
+        "MIC_log": -2.6390573296152584,
+        "MIC_log_pos": 4.129435882033372
+      },
+      {
+        "Bacteria": "Streptococcus viridans",
+        "Gram_Staining": "positive",
+        "Genus": "Streptococcus",
+        "Antibiotic": "Streptomycin",
+        "MIC": 10,
+        "MIC_log": -2.302585092994046,
+        "MIC_log_pos": 4.465908118654584
+      },
+      {
+        "Bacteria": "Streptococcus fecalis",
+        "Gram_Staining": "positive",
+        "Genus": "Streptococcus",
+        "Antibiotic": "Neomycin",
+        "MIC": 0.1,
+        "MIC_log": 2.3025850929940455,
+        "MIC_log_pos": 9.071078304642676
+      },
+      {
+        "Bacteria": "Streptococcus hemolyticus",
+        "Gram_Staining": "positive",
+        "Genus": "Streptococcus",
+        "Antibiotic": "Neomycin",
+        "MIC": 10,
+        "MIC_log": -2.302585092994046,
+        "MIC_log_pos": 4.465908118654584
+      },
+      {
+        "Bacteria": "Streptococcus viridans",
+        "Gram_Staining": "positive",
+        "Genus": "Streptococcus",
+        "Antibiotic": "Neomycin",
+        "MIC": 40,
+        "MIC_log": -3.6888794541139363,
+        "MIC_log_pos": 3.0796137575346934
+      }
+    ],
+    "data-d604859ea725603f79903782f4b2522d": [
+      {
+        "hover": "Penicillin manages to outperform Neomycin and Streptomycin (despite the Strep- prefix) when treating the Streptococcis genome.",
+        "marker": "↓",
+        "marker2": "③",
+        "Antibiotic": "Penicillin",
+        "Genus": "Streptococcus",
+        "MIC": 5
+      }
+    ],
+    "data-1e58ebb13e58359f2922b190515e8fc3": [
+      {
+        "Bacteria": "Aerobacter aerogenes",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Penicillin",
+        "MIC": 870,
+        "MIC_log": -6.76849321164863,
+        "MIC_log_pos": 0
+      },
+      {
+        "Bacteria": "Bacillus anthracis",
+        "Gram_Staining": "positive",
+        "Genus": "Other",
+        "Antibiotic": "Penicillin",
+        "MIC": 0.001,
+        "MIC_log": 6.907755278982137,
+        "MIC_log_pos": 13.676248490630766
+      },
+      {
+        "Bacteria": "Brucella abortus",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Penicillin",
+        "MIC": 1,
+        "MIC_log": 0,
+        "MIC_log_pos": 6.76849321164863
+      },
+      {
+        "Bacteria": "Diplococcus pneumoniae",
+        "Gram_Staining": "positive",
+        "Genus": "Other",
+        "Antibiotic": "Penicillin",
+        "MIC": 0.005,
+        "MIC_log": 5.298317366548036,
+        "MIC_log_pos": 12.066810578196666
+      },
+      {
+        "Bacteria": "Escherichia coli",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Penicillin",
+        "MIC": 100,
+        "MIC_log": -4.605170185988092,
+        "MIC_log_pos": 2.163323025660538
+      },
+      {
+        "Bacteria": "Klebsiella pneumoniae",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Penicillin",
+        "MIC": 850,
+        "MIC_log": -6.745236349484363,
+        "MIC_log_pos": 0.023256862164267034
+      },
+      {
+        "Bacteria": "Mycobacterium tuberculosis",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Penicillin",
+        "MIC": 800,
+        "MIC_log": -6.684611727667927,
+        "MIC_log_pos": 0.0838814839807025
+      },
+      {
+        "Bacteria": "Proteus vulgaris",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Penicillin",
+        "MIC": 3,
+        "MIC_log": -1.0986122886681098,
+        "MIC_log_pos": 5.66988092298052
+      },
+      {
+        "Bacteria": "Pseudomonas aeruginosa",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Penicillin",
+        "MIC": 850,
+        "MIC_log": -6.745236349484363,
+        "MIC_log_pos": 0.023256862164267034
+      },
+      {
+        "Bacteria": "Aerobacter aerogenes",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Streptomycin",
+        "MIC": 1,
+        "MIC_log": 0,
+        "MIC_log_pos": 6.76849321164863
+      },
+      {
+        "Bacteria": "Bacillus anthracis",
+        "Gram_Staining": "positive",
+        "Genus": "Other",
+        "Antibiotic": "Streptomycin",
+        "MIC": 0.01,
+        "MIC_log": 4.605170185988091,
+        "MIC_log_pos": 11.37366339763672
+      },
+      {
+        "Bacteria": "Brucella abortus",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Streptomycin",
+        "MIC": 2,
+        "MIC_log": -0.6931471805599453,
+        "MIC_log_pos": 6.075346031088684
+      },
+      {
+        "Bacteria": "Diplococcus pneumoniae",
+        "Gram_Staining": "positive",
+        "Genus": "Other",
+        "Antibiotic": "Streptomycin",
+        "MIC": 11,
+        "MIC_log": -2.3978952727983707,
+        "MIC_log_pos": 4.370597938850259
+      },
+      {
+        "Bacteria": "Escherichia coli",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Streptomycin",
+        "MIC": 0.4,
+        "MIC_log": 0.916290731874155,
+        "MIC_log_pos": 7.684783943522785
+      },
+      {
+        "Bacteria": "Klebsiella pneumoniae",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Streptomycin",
+        "MIC": 1.2,
+        "MIC_log": -0.1823215567939546,
+        "MIC_log_pos": 6.586171654854675
+      },
+      {
+        "Bacteria": "Mycobacterium tuberculosis",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Streptomycin",
+        "MIC": 5,
+        "MIC_log": -1.6094379124341003,
+        "MIC_log_pos": 5.159055299214529
+      },
+      {
+        "Bacteria": "Proteus vulgaris",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Streptomycin",
+        "MIC": 0.1,
+        "MIC_log": 2.3025850929940455,
+        "MIC_log_pos": 9.071078304642676
+      },
+      {
+        "Bacteria": "Pseudomonas aeruginosa",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Streptomycin",
+        "MIC": 2,
+        "MIC_log": -0.6931471805599453,
+        "MIC_log_pos": 6.075346031088684
+      },
+      {
+        "Bacteria": "Aerobacter aerogenes",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Neomycin",
+        "MIC": 1.6,
+        "MIC_log": -0.47000362924573563,
+        "MIC_log_pos": 6.298489582402894
+      },
+      {
+        "Bacteria": "Bacillus anthracis",
+        "Gram_Staining": "positive",
+        "Genus": "Other",
+        "Antibiotic": "Neomycin",
+        "MIC": 0.007,
+        "MIC_log": 4.961845129926823,
+        "MIC_log_pos": 11.730338341575454
+      },
+      {
+        "Bacteria": "Brucella abortus",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Neomycin",
+        "MIC": 0.02,
+        "MIC_log": 3.912023005428146,
+        "MIC_log_pos": 10.680516217076775
+      },
+      {
+        "Bacteria": "Diplococcus pneumoniae",
+        "Gram_Staining": "positive",
+        "Genus": "Other",
+        "Antibiotic": "Neomycin",
+        "MIC": 10,
+        "MIC_log": -2.302585092994046,
+        "MIC_log_pos": 4.465908118654584
+      },
+      {
+        "Bacteria": "Escherichia coli",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Neomycin",
+        "MIC": 0.1,
+        "MIC_log": 2.3025850929940455,
+        "MIC_log_pos": 9.071078304642676
+      },
+      {
+        "Bacteria": "Klebsiella pneumoniae",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Neomycin",
+        "MIC": 1,
+        "MIC_log": 0,
+        "MIC_log_pos": 6.76849321164863
+      },
+      {
+        "Bacteria": "Mycobacterium tuberculosis",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Neomycin",
+        "MIC": 2,
+        "MIC_log": -0.6931471805599453,
+        "MIC_log_pos": 6.075346031088684
+      },
+      {
+        "Bacteria": "Proteus vulgaris",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Neomycin",
+        "MIC": 0.1,
+        "MIC_log": 2.3025850929940455,
+        "MIC_log_pos": 9.071078304642676
+      },
+      {
+        "Bacteria": "Pseudomonas aeruginosa",
+        "Gram_Staining": "negative",
+        "Genus": "Other",
+        "Antibiotic": "Neomycin",
+        "MIC": 0.4,
+        "MIC_log": 0.916290731874155,
+        "MIC_log_pos": 7.684783943522785
+      }
+    ],
+    "data-491e1f23d43872a17c1cf562afef7c23": [
+      {
+        "hover": "But across a variety of other genomes, Penicillin performs generally poorly compared to its alternatives.",
+        "marker": "→",
+        "marker2": "④",
+        "Antibiotic": "Neomycin",
+        "Genus": "Other",
+        "MIC": 100
+      }
+    ]
+  }
+};
+    vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+  </script>
+  <p class="footnotes genome"><strong>Genome</strong></p>
+  <p class="footnotes"><em><strong>Note:</strong> MIC stands for the minimum inhibitory concentration, which, to quote <a href="https://en.wikipedia.org/wiki/Minimum_inhibitory_concentration">Wikipedia</a>:
+    "is the lowest concentration of a chemical,<br>usually a drug, which prevents visible in vitro growth of bacteria or fungi."</em>
+  </p>
+</body>
+</html>
