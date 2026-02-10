@@ -25,10 +25,11 @@ disqus_shortname: myshortname
 
 # Color settings (hex-codes without the leading hash-tag)
 color:
-  primary: 18bc9c #80B3FF
-  primary-rgb: "24,288,156" #"128,179,255"
-  secondary: 2c3e50 #FD6E8A
+  primary: E7A624 #80B3FF
+  primary-rgb: "231,166,36" #"128,179,255"
+  secondary: 2C3E50 #FD6E8A
   secondary-dark: 233140 #A2122F
+  secondary-light: EAf2Ef
 
 # Footer settings
 footer:
@@ -59,7 +60,7 @@ address:
   - line: Newton, MA
 
 # Credits content
-credits: 'Many thanks to <a href="http://startbootstrap.com">Start Bootstrap</a> for developing the Bootstrap theme Freelancer.'
+credits: 'Many thanks to <a href="http://startbootstrap.com">Start Bootstrap</a> for developing the Freelancer theme.'
 
 # Build settings
 markdown: kramdown
