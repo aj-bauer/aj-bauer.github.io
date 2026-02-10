@@ -5,5 +5,28 @@
 .open>.dropdown-toggle.btn-success {
     color: #ffffff;
     background-color: #{{ site.color.secondary }};
-    border-color: #{{ site.color.secondary }}
+    border-color: #{{ site.color.secondary }};
+}
+
+.btn-social.btn-outline {
+    color: #{{ site.color.secondary-light }};
+}
+
+.model-content {
+    background-color: {{ site.color.secondary-light }};
+}
+
+.btn-default {
+    color: #ffffff;
+    background-color: #{{ site.color.secondary }};
+    border-color: #{{ site.color.secondary }};
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-outline:active,
+.btn-default.active {
+    color: #ffffff;
+    background-color: #{{ site.color.secondary-dark }};
+    border-color: #{{ site.color.secondary-dark }};
 }
