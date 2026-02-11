@@ -40,15 +40,16 @@
 }
 
 hr.star-primary:after {
-    background-color: #{{ site.color.secondary-dark }};
+    background-color: #{{ site.color.secondary-light }};
 }
 
 hr.star-light {
-    border-color: #{{ site.color.secondary-light }};
+    background-color: #{{ site.color.secondary-light }};
+    color: #{{ site.color.secondary-dark }};
 }
 
 hr.star-light:after {
-    color: #{{ site.color.secondary-light }};
+    color: #{{ site.color.secondary-dark }};
 }
 
 .portfolio-modal .modal-content {
