@@ -8,7 +8,7 @@
     border-color: #{{ site.color.secondary }};
 }
 
-.btn-social.btn-outline {
+.btn-social {
     color: #{{ site.color.secondary-light }};
 }
 
@@ -36,6 +36,10 @@
     color: #ffffff;
     background-color: #{{ site.color.secondary-dark }};
     border-color: #{{ site.color.secondary-dark }};
+}
+
+hr.star-primary:after {
+    background-color: #{{ site.color.secondary-light }};
 }
 
 hr.star-light {
