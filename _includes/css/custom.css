@@ -23,7 +23,8 @@
     background-color: {{ site.color.secondary-light }};
 }
 
-.btn-default {
+.btn-default,
+.modal-body .btn-default {
     color: #ffffff;
     background-color: #{{ site.color.secondary }};
     border-color: #{{ site.color.secondary }};
@@ -48,4 +49,8 @@ hr.star-light {
 
 hr.star-light:after {
     color: #{{ site.color.secondary-dark }};
+}
+
+.portfolio-modal {
+    background-color: #{{ site.color.secondary-light }};
 }

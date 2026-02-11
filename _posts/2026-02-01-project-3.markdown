@@ -1,0 +1,12 @@
+---
+layout: default
+modal-id: 3
+title: Bibliometric Network Analysis
+date: 2036-02-01
+img: network.png
+alt: Network graph of bibliographic citations
+project-date: Spring 2025
+repository: <a href="https://github.com/aj-bauer/bibliometricNetworkAnalysis">GitHub</a>
+credit: <a href="https://github.com/aj-bauer/bibliometricNetworkAnalysis/blob/main/figures/fig2.png">GitHub</a>
+description: This project used OpenAlex to pull a dataset of articles from the <em>Journal of Machine Learning Research</em>, as well as all articles cited by or citing the <em>JML</em> articles. Basic network analysis techniques were employed to analyze and visualize the subsequent citation network.
+---
