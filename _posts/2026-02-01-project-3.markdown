@@ -2,7 +2,7 @@
 layout: default
 modal-id: 3
 title: Bibliometric Network Analysis
-date: 2036-02-01
+date: 2026-02-01
 img: network.png
 alt: Network graph of bibliographic citations
 project-date: Spring 2025
