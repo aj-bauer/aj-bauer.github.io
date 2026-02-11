@@ -16,12 +16,6 @@
     color: #{{ site.color.secondary-light }};
 }
 
-.btn-social.btn-outline:hover,
-.btn-social.btn-outline:focus,
-.btn-social.btn-outline:active,
-.btn-social.btn-outline.active, {
-    color: #{{ site.color.secondary-dark }};
-}
 
 .model-content {
     background-color: {{ site.color.secondary-light }};
@@ -29,7 +23,7 @@
 
 .btn-default,
 .modal-body .btn-default {
-    color: #ffffff;
+    color: #{{ site.color.secondary-dark }};
     background-color: #{{ site.color.primary }};
     border-color: #{{ site.color.primary }};
 }

@@ -298,6 +298,13 @@ section.success {
     background: #{{ site.color.secondary-light }};
 }
 
+.btn-social.btn-outline:hover,
+.btn-social.btn-outline:focus,
+.btn-social.btn-outline:active,
+.btn-social.btn-outline.active, {
+    color: #{{ site.color.secondary-dark }};
+}
+
 .floating-label-form-group {
     position: relative;
     margin-bottom: 0;

@@ -3,10 +3,10 @@ layout: default
 modal-id: 1
 title: Law Review Keyword Assingment
 date: 2025-11-28
-img: BCLR_emblem.png
+img: BCLR_grey.png
 alt: Boston College Law Review emblem
 project-date: Fall 2025
 repository: <a href="https://github.com/aj-bauer/lawReviewKeywordAssignment">GitHub</a>
 credit: <a href="https://lira.bc.edu">BCLR</a>
-description: Developed with Sarah Her, this project uses NLP techniques to automatically assign keywords from a controlled vocabulary to law review articles based on article abstracts. The dataset used to train and test the model draws on articles from the <em>Boston College Law Review</em>, the <em>Boston College Environmental Affairs Law Review</em>, the <em>Boston College International and Comparative Law Review</em>, the <em>Boston College Journal of Law & Social Justice</em>, and the <em>Boston College Third World Law Journal</em>.
+description: Developed with Sarah Her, this NLP project uses a Support Vector Machines model to automatically assign keywords from a controlled vocabulary to law review articles based on article abstracts. The dataset used to train and test the model draws on articles from the <em>Boston College Law Review</em>, the <em>Boston College Environmental Affairs Law Review</em>, the <em>Boston College International and Comparative Law Review</em>, the <em>Boston College Journal of Law & Social Justice</em>, and the <em>Boston College Third World Law Journal</em>.
 ---
