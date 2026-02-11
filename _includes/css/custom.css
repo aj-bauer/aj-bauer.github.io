@@ -30,8 +30,8 @@
 .btn-default,
 .modal-body .btn-default {
     color: #ffffff;
-    background-color: #{{ site.color.secondary }};
-    border-color: #{{ site.color.secondary }};
+    background-color: #{{ site.color.primary }};
+    border-color: #{{ site.color.primary }};
 }
 
 .btn-default:hover,
