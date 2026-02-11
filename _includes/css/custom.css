@@ -12,6 +12,13 @@
     color: #{{ site.color.secondary-light }};
 }
 
+.btn-social.btn-outline:hover,
+.btn-social.btn-outline:focus,
+.btn-social.btn-outline:active,
+.btn-social.btn-outline.active, {
+    color: #{{ site.color.secondary }};
+}
+
 .model-content {
     background-color: {{ site.color.secondary-light }};
 }
@@ -29,4 +36,12 @@
     color: #ffffff;
     background-color: #{{ site.color.secondary-dark }};
     border-color: #{{ site.color.secondary-dark }};
+}
+
+hr.star-light {
+    border-color: #{{ site.color.secondary-dark }};
+}
+
+hr.star-light:after {
+    color: #{{ site.color.secondary-dark }};
 }
