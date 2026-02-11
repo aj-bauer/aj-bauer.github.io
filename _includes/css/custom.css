@@ -8,6 +8,10 @@
     border-color: #{{ site.color.secondary }};
 }
 
+.btn-success {
+    color:  #{{ site.color.secondary-dark }};
+}
+
 .btn-social {
     color: #{{ site.color.secondary-light }};
 }

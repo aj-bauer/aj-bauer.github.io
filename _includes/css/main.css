@@ -50,7 +50,7 @@ hr.star-primary {
 
 hr.star-light:after,
 hr.star-primary:after {
-    content: "\e80a";
+    content: "\f520";
     display: inline-block;
     position: relative;
     top: -.8em;
@@ -59,22 +59,18 @@ hr.star-primary:after {
     font-size: 2em;
 }
 
-hr.star-light {
-    border-color: #{{ site.color.secondary-light }};
-}
-
 hr.star-light:after {
     color: #{{ site.color.secondary-light }};
     background-color: #{{ site.color.primary }};
 }
 
 hr.star-primary {
-    border-color: #{{ site.color.secondary }};
+    border-color: #{{ site.color.secondary-dark }};
 }
 
 hr.star-primary:after {
-    color: #{{ site.color.secondary }};
-    background-color: #{{ site.color.secondary-light }};
+    color: #{{ site.color.secondary-dark }};
+    background-color: #{{ site.color.secondary }};
 }
 
 .img-centered {
