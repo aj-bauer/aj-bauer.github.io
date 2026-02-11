@@ -16,6 +16,12 @@
     color: #{{ site.color.secondary-light }};
 }
 
+.btn-social:hover,
+.btn-social:focus,
+.btn-social:active,
+.btn-social.active, {
+    color: #{{ site.color.secondary-dark }};
+}
 
 .model-content {
     background-color: {{ site.color.secondary-light }};
