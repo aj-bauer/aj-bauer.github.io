@@ -183,7 +183,7 @@ section h2 {
 
 section.success {
     color: #{{ site.color.secondary-dark }};
-    background: #{{ site.color.primary }};
+    background: #{{ site.color.secondary-light }};
 }
 
 @media(max-width:767px) {
@@ -194,6 +194,10 @@ section.success {
     section.first {
         padding-top: 75px;
     }
+}
+
+#portfolio {
+    background-color: #{{ site.color.primary }};
 }
 
 #portfolio .portfolio-item {
