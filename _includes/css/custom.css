@@ -20,7 +20,7 @@
 .btn-social.btn-outline:focus,
 .btn-social.btn-outline:active,
 .btn-social.btn-outline.active, {
-    color: #{{ site.color.secondary }};
+    color: #{{ site.color.secondary-dark }};
 }
 
 .model-content {
@@ -36,7 +36,7 @@
 
 .btn-default:hover,
 .btn-default:focus,
-.btn-outline:active,
+.btn-default:active,
 .btn-default.active {
     color: #ffffff;
     background-color: #{{ site.color.secondary-dark }};
@@ -44,7 +44,7 @@
 }
 
 hr.star-primary:after {
-    background-color: #{{ site.color.secondary }};
+    background-color: #{{ site.color.primary }};
 }
 
 hr.star-light {
@@ -59,4 +59,10 @@ hr.star-light:after {
 
 .portfolio-modal .modal-content {
     background-color: #{{ site.color.secondary-light }};
+}
+
+.success .btn-outline:hover {
+    color: #ffffff;
+    background-color: #{{ site.color.secondary }};
+    border-color: #{{ site.color.secondary }};
 }

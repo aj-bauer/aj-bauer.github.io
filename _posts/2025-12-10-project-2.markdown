@@ -6,7 +6,7 @@ date: 2025-12-10
 img: cityscape.jpg
 alt: black and white city skyline
 project-date: Fall 2025
-repository: <a href="https://github.com/aj-bauer/MESA8413_Bauer_FinalProject">GitHub</a> 
+repository: <a href="https://github.com/aj-bauer/NYC311_Database">GitHub</a> 
 credit: <a href="https://unsplash.com/@remapstudio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Remapstudio</a>
       
 description: In this project, I designed and built a Postgresql database using the <em>311 Service Requests from 2010 to Present</em> dataset published by NYC OpenData. This data includes information on the time, location, and nature of all service requests made to the 311 non-emergency help line in New York City from 2010 to the present.
