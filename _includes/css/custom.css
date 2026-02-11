@@ -51,6 +51,6 @@ hr.star-light:after {
     color: #{{ site.color.secondary-dark }};
 }
 
-.modal-content {
+.portfolio-modal .modal-content {
     background-color: #{{ site.color.secondary-light }};
 }
