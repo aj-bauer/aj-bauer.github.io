@@ -66,3 +66,7 @@ hr.star-light:after {
     background-color: #{{ site.color.secondary }};
     border-color: #{{ site.color.secondary }};
 }
+
+.btn-social .fa-brands:hover {
+    color: #{{ site.color.secondary }};
+}
