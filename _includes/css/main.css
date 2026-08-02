@@ -495,3 +495,18 @@ footer .footer-below {
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
 }
+
+#personal-statement a {
+    color: #{{ site.color.secondary-dark }};
+    text-decoration: underline;
+}
+
+#personal-statement a:hover,
+#personal-statement a:focus,
+#personal-statement a:active{
+    color: #{{ site.color.secondary }};
+}
+
+#personal-statement li {
+    font-size: 20px
+}
