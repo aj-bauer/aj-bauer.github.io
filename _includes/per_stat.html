@@ -3,17 +3,65 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2>Personal Statement</h2>
+        <h2>Becoming a Data Scientist</h2>
         <hr class="star-light">
       </div>
     </div>
     <div class="row">
-      <img class="img-responsive" src="/img/portfolio/accountable.png" alt="A computer can never be held accountable. Therefore a computer must never make a management decision." />
-      <p><i>{{ pages.personal-statement.caption }}</i></p>
+      <div class="col-lg-12">
+        <h3 id="i-ll-be-honest-">I'll be honest.</h3>
+        <p>I hadn't been planning on going back to grad school after my first go-around. Fresh out of my first Master's program, I was really enjoying not having to do homework after getting home from regular work. </p>
+        <p>But here's the thing: I also really wanted to take a statistics course. Somehow, despite being on an advanced math track in high school, going to a tech school, and majoring in mechanical engineering, I had never taken a class on statistics or probability. Notably, I had tried to sign up for one during my first Master's program, but it was only open to PhD students.</p>
+        <p>Now, a very nice benefit at the university where I work is tuition remission. So with my new free time, I did some browsing around the course catalog for a promising looking summer class. I did find one that looked good at the school of education, which focused on statistics for social science research. I was intrigued - in undergrad I had double majored in mechanical engineering and gender studies, so the intersection of STEM and social science is of particular interest to me.</p>
+        <p>Poking around the school of education website to learn more about the class, I also found information about a new part-time virtual program they were launching in the fall. It was a Master's program in data science with an explicit focus on “human-centered data science.” This was even more intriguing: a whole program designed around putting technology in the broader social context. </p>
+        <p>To make a long story short, two years later I am poised to graduate with my second MS degree, and find myself thinking about what “human-centered data science” actually means. It's a big question. I can run a linear regression or build a small LLM application, but can I describe the whole principle behind my degree?</p>
+        <h3 id="we-don-t-have-to-start-from-ground-zero-">We don't have to start from ground zero.</h3>
+        <p>Many people have thought a great deal about how data science can be used to benefit (or harm) individuals and communities, especially as analytical and generative AI proliferates across different sectors of society, from government surveillance to medical research to social media. </p>
+        <p>I am particularly drawn to the definitions provided in <a href="https://cdn.prod.website-files.com/5e027ca188c99e3515b404b7/5e332b739c247f30b4888385_AJL%20101%20Final%20_1.22.20.pdf">The Algorithmic Justice League's 101 Overview</a> (2020) of equitable and accountable AI. To be equitable, a system must not simply be inclusive or even-handed, but actively put agency and control in the hands of the people using or affected by it. For accountability to exist, there must be meaningful transparency about how the system works, who created it and why, and any known limitations. And, of course, there must be human oversight to catch harm and mechanisms to address that harm. Many of these points overlap with the <a href="https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai">guidelines published by the High-Level Expert Group on AI</a> (2020), although the latter also calls attention to the necessity of environmental sustainability.</p>
+      </div>
     </div>
     <div class="row">
-      <div class="col-lg-12 text-justify">
-        {{ pages.personal-statement.content }}
+      <div class="col-lg-12 text-center">
+        <img class="img-responsive" src="/img/portfolio/accountable.png" alt="A computer can never be held accountable. Therefore a computer must never make a management decision." />
+      </div>
+      <div class="col-lg-12">
+        <p><i>(Sidebar: calls for accountability in AI reminds me of <a href="https://x.com/bumblebike/status/832394003492564993">this tweet from @bumblebike</a>, <a href="http://simonwillison.net/2025/Feb/3/a-computer-can-never-be-held-accountable/">allegedly</a> from a 1979 internal IBM training.)</i></p>
+      </div>
+    </div>
+        <div class="row">
+      <div class="col-lg-12">
+        <p>Together, these two frameworks outline a picture of responsible AI development, deployment, oversight, and governance. But how can I scale these broad principles down into a personal code of ethics? How can I, as an individual, <em>practice</em> ethical, human-centered data science? </p>
+        <p>To attempt to build a personal set of principles, I have to first make a confession.</p>
+        <h3 id="i-am-a-librarian-">I am a librarian.</h3>
+        <p>Specifically, I am an academic librarian working at a law school library. My role focuses on digital projects and support for the publication and promotion of faculty scholarship. Not exactly a profession one would expect to overlap much with data science. </p>
+        <p>Yet, there is one topic we talk a lot about in libraries that I keep coming back to when I think about building a set of principles for my own data science practice. </p>
+        <p><strong>Information literacy</strong>, in simple terms, is the ability to find, assess, understand, work with, create, and share information with others. The <a href="https://www.ala.org/acrl/standards/ilframework">Association of College and Research Libraries (ACRL)</a> defines it as “the set of integrated abilities encompassing the reflective discovery of information, the understanding of how information is produced and valued, and the use of information in creating new knowledge and participating ethically in communities of learning.” ACRL provides <a href="https://www.ala.org/acrl/standards/ilframework">seven frames</a> (in no particular order) to scaffold learning and teaching information literacy:</p>
+        <ol>
+            <li>Authority is constructed and contextual.</li>
+            <li>Information creation as a process.</li>
+            <li>Information has value.</li>
+            <li>Research as inquiry.</li>
+            <li>Scholarship as conversation.</li>
+            <li>Searching as strategic exploration.</li>
+        </ol>
+        <p>Information literacy as a skill is not only relevant to success in the academic sphere. It provides a framework for navigating everyday life: Can you read and understand a lease or bank statement? Can you recognize when a news story or blog post might be biased? Do you know how to find out if a political figure or TikTok influencer (or ChatGPT) is giving you misinformation? Answering any of these questions requires employing the skills encompassed by information literacy.</p>
+        <h3 id="let-s-bring-it-back-to-data-science-">Let's bring it back to data science.</h3>
+        <p>We can start bringing these two disciplines together by first articulating three broad principles from AI and data science literature: sustainability, accountability, and agency.</p>
+        <ul>
+        <li><strong>Sustainability</strong> as a core principle starts with environmental responsibility, but it doesn't end there. To borrow from another library organization, the <a href="https://www.ala.org/advocacy/advocacy/intfreedom/corevalues">American Library Association</a>: “Sustainability means making choices that are good for the environment, make sense economically, and treat everyone equitably. Sustainable choices preserve physical and digital resources and keep services useful now and into the future.” </li>
+        <li><strong>Accountability</strong>, as discussed above, requires both meaningful transparency and human oversight. Serious thought must be taken to the <a href="https://deon.drivendata.org/#d-modeling">explainability of models</a> and reproducibility of analyses. Adequate human oversight involves monitoring a deployed system for unexpected outcomes, performing due diligence to prevent unintended or harmful use of the system (and considering what should constitute <a href="https://cdn.prod.website-files.com/5e027ca188c99e3515b404b7/5e332b739c247f30b4888385_AJL%20101%20Final%20_1.22.20.pdf">impermissible use</a>), and ensuring that there are clear avenues of redress for any harm that occurs.</li>
+        <li><strong>Agency</strong> centers the role of the subjects and users of systems. All systems must be actively opt-in and provide for <a href="https://deon.drivendata.org/#b-data-storage">the right to be forgotten</a>. All data collection must involve the informed consent of the subject. </li>
+        </ul>
+        <p>As a data scientist, I can weigh the environmental impacts of the tools I use or develop; I can create clear documentation; I can advocate for clear structures to redress harm; I can take care with my data collection to respect the dignity of subjects. These are actionable items.</p>
+        <p>But when I look at these principles as a librarian, I see a different call to action. For example: how do we ensure the subject of a study understands how their data will be used, let alone every user (including me) who scrolls past those <a href="https://tosdr.org/en">pesky terms of service</a> when signing up for a platform? As a data scientist I can ensure that the limitations of a model are adequately communicated, but how do I ensure that my audience knows what I mean when I talk about uncertainty or bias? And how do I know that they even knew where to find that information? </p>
+        <h3 id="there-is-clearly-a-gap-here-">There is clearly a gap here.</h3>
+        <p>So, drawing on the information literacy framework outlined above, I would like to add a fourth principle:</p>
+        <ul>
+        <li><strong>Education</strong> focuses on promoting the public's ability to meaningfully interact with the data ecosystems that surround us. Core competencies include basic data literacy (such as parsing graphs and simple statistics); the ability to locate and assess the reliability of data; and broader comprehension of how data are produced, valued, and used for benefit and/or harm in our communities.</li>
+        </ul>
+        <p>I'm not saying that every data scientist has to drop what they're doing and start exclusively running public awareness campaigns. But for me, as a librarian and newly-minted data scientist, a core part of my data science practice must entail outreach and education, whether in a classroom, library, blog post, or casual conversation. </p>
+        <p>To keep data science sustainable and accountable, and to ensure the agency of our communities in its practice, we must also ensure our communities have the tools to meaningfully engage in that practice. </p>
+        <p>And as data science practitioners (among whom I hope to count myself), who are better equipped to provide those tools?</p>
       </div>
     </div>
   </div>

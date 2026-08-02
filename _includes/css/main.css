@@ -182,6 +182,10 @@ section.success {
     background: #{{ site.color.secondary-light }};
 }
 
+section#personal-statement {
+    padding-top: 200px;
+}
+
 @media(max-width:767px) {
     section {
         padding: 75px 0;
