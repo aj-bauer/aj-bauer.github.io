@@ -497,14 +497,14 @@ footer .footer-below {
 }
 
 #personal-statement a {
-    color: #{{ site.color.secondary-dark }};
+    color: #{{ site.color.secondary }};
     text-decoration: underline;
 }
 
 #personal-statement a:hover,
 #personal-statement a:focus,
 #personal-statement a:active{
-    color: #{{ site.color.secondary }};
+    color: #{{ site.color.primary }};
 }
 
 #personal-statement li {
