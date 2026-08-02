@@ -26,6 +26,17 @@ a.active {
     color: #{{ site.color.primary }};
 }
 
+#personal-statement a {
+    color: #{{ site.color.secondary-dark }};
+    text-decoration: underline;
+}
+
+#personal-statement a:hover,
+#personal-statement a:focus,
+#personal-statement a:active{
+    color: #{{ site.color.secondary }};
+}
+
 h1,
 h2,
 h3,
